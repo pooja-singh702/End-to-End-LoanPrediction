@@ -2,7 +2,7 @@
 
 
 ## Welcome Page
-![Welcome Image](https://github.com/your-username/End_to_End_Loan_Prediction/raw/main/welcome.svg)
+![Welcome Image](https://raw.githubusercontent.com/pooja-singh702/End-to-End-LoanPrediction/main/welcome.svg)
 
 
 
