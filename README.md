@@ -1,6 +1,15 @@
 # Welcome to End to End Loan Prediction Project
 
-## Loan Prediction Application Diag:
+## Welcome Page
+![Welcome Image](welcome.svg)
+
+
+
+## Loan Eligibility Form
+
+You can fill out the form here: [Loan Eligibility Form](http://127.0.0.1:5002/Predictdata)
+
+
 
 
 
