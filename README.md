@@ -322,11 +322,12 @@ The main idea behind this implementation is to gather user inputs through the we
 6. **Access the Application**
   ```
   You can access the application by opening your web browser and navigating to:
-    http://127.0.0.1:5000
+  
+    http://127.0.0.1:5002/Predictdata
   ```
 7. **Test the Application**
   ```
-  Once the application is running, open your browser and go to http://127.0.0.1:5000. You can input financial and demographic data into the form and click "Predict" to get a prediction on loan default.
+  Once the application is running, open your browser and go to http://127.0.0.1:5002. This is index html file welcome page. By adding /Predictdata (http://127.0.0.1:5002/Predictdata) loan prediction form opens. You can input financial and demographic data into the form and click "Predict" to get a prediction on loan default.
 
 
 ## Problems-Faced-on-Running-Flask for User Predictions:
