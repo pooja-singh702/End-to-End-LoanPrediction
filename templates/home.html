@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Status Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+       
+    /* CSS for setting the background */
+    body {
+        background-color: #f0f8ff; /* Light blue background */
+        background-image: url('https://www.transparenttextures.com/patterns/asfalt.png'); /* Texture pattern */
+        background-size: cover; /* Makes sure the image covers the entire screen */
+        background-attachment: fixed; /* Keeps the background fixed as you scroll */
+        color: black;  /* Text color */
+    }
+
+    /* Container styling with vibrant colors */
+    .container {
+        background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);  /* Subtle shadow effect */
+        margin-top: 60px; /* Adds space from the top */
+        border: 3px solid #007bff;  /* Blue border for the container */
+    }
+
+    /* Header and form label styling */
+    h1 {
+        color: #007bff; /* Blue text color for the heading */
+        text-align: center; /* Centered heading */
+    }
+
+    h2 {
+        color: #333; /* Result text color */
+        font-weight: bold;
+        text-align: center; /* Centered result */
+    }
+
+    .form-label {
+        color: #333; /* Dark label text color */
+    }
+
+    /* Form input fields styling */
+    .form-control {
+        border-radius: 8px; /* Rounded corners for input fields */
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);  /* Soft shadow around inputs */
+        margin-bottom: 20px; /* Spacing between input fields */
+        
+        border: 2px solid #ccc; /* Light border */
+    }
+
+    .form-control:focus {
+        border-color: #007bff; /* Highlight border color on focus */
+        box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5); /* Blue shadow on focus */
+    }
+
+    /* Form button styling */
+    input[type="submit"] {
+        background-color: #28a745; /* Green button */
+        color: white;  /* White text for the button */
+        border: none;
+        /*padding: 15px 30px;*/
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;  /* Full-width button */
+        font-size: 16px;
+        margin-top: 10px; /* Space above the button */
+        transition: background-color 0.3s ease; /* Smooth color change on hover */
+    }
+
+    input[type="submit"]:hover {
+        background-color: #218838; /* Darker green when hovered */
+    }
+
+    /* Placeholder color */
+    input::placeholder {
+        color: #888; /* Light gray placeholder text */
+    }
+
+    /* Styling for the select fields */
+    select.form-control {
+        
+        border-radius: 8px;
+        border: 2px solid #ccc;
+        background-color: #fff; /* White background for select options */
+        color: #333;  /* Text color */
+        width: 100%;  /* Make select box full width */
+    }
+
+    /* Focus style for the select fields */
+    select.form-control:focus {
+        border-color: #007bff; /* Blue border when focused */
+        box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5); /* Blue shadow on focus */
+    }
+
+    /* Improve visibility for selected options */
+    select.form-control option {
+        color: #333; /* Dark text color */
+        background-color: #ffffff; /* White background for options */
+    }
+
+    /* Add custom styles for the select box */
+    select.form-control {
+        background-color: #ffffff; /* Set background color of the select box */
+        color: #333; /* Text color */
+        font-size: 16px;
+    }
+
+    /* Ensure options in the dropdown are styled correctly */
+    select.form-control option {
+        color: #333; /* Dark text color */
+        background-color: #ffffff; /* White background for options */
+    }
+    </style>
+
+   
+
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Status Prediction</h1>
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <legend>Loan Prediction</legend>
+
+            <!-- Gender -->
+            <div class="mb-3">
+                <label class="form-label">Gender</label>
+                <select class="form-control" name="Gender" required>
+                    <option class="placeholder" selected disabled value="">Select your Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <!-- Married -->
+            <div class="mb-3">
+                <label class="form-label">Married</label>
+                <select class="form-control" name="Married" required>
+                    <option class="placeholder" selected disabled value="">Select Marital Status</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+
+            <!-- Education -->
+            <div class="mb-3">
+                <label class="form-label">Education</label>
+                <select class="form-control" name="Education" required>
+                    <option class="placeholder" selected disabled value="">Select Education Level</option>
+                    <option value="Graduate">Graduate</option>
+                    <option value="Not Graduate">Not Graduate</option>
+                </select>
+            </div>
+
+            <!-- Self Employed -->
+            <div class="mb-3">
+                <label class="form-label">Self Employed</label>
+                <select class="form-control" name="Self_Employed" required>
+                    <option class="placeholder" selected disabled value="">Select Self Employed Status</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <!-- Property Area -->
+            <div class="mb-3">
+                <label class="form-label">Property Area</label>
+                <select class="form-control" name="Property_Area" required>
+                    <option class="placeholder" selected disabled value="">Select Property Area</option>
+                    <option value="Rural">Rural</option>
+                    <option value="Semiurban">Semiurban</option>
+                    <option value="Urban">Urban</option>
+                </select>
+            </div>
+
+            <!-- Dependents -->
+            <div class="mb-3">
+                <label class="form-label">Dependents</label>
+                <select class="form-control" name="Dependents" required>
+                    <option class="placeholder" selected disabled value="">Select number of Dependents</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+
+            <!-- Applicant Income -->
+            <div class="mb-3">
+                <label class="form-label">Applicant Income</label>
+                <input class="form-control" type="number" name="ApplicantIncome" min="0" max="5000" required />
+            </div>
+
+            <!-- Coapplicant Income -->
+            <div class="mb-3">
+                <label class="form-label">Coapplicant Income</label>
+                <input class="form-control" type="number" name="CoapplicantIncome" min="0" max="5000" required />
+            </div>
+
+            <!-- Loan Amount Term -->
+            <div class="mb-3">
+                <label class="form-label">Loan Amount Term</label>
+                <input class="form-control" type="number" name="Loan_Amount_Term" min="120" max="360" required />
+            </div>
+
+            <!-- Credit History -->
+            <div class="mb-3">
+                <label class="form-label">Credit History</label>
+                <select class="form-control" name="Credit_History" required>
+                <option class="placeholder" selected disabled value="">Select Credit History</option>
+                <option value="1.0">1.0</option>
+                <option value="0.0">0.0</option>
+                </select>
+          </div>
+
+
+            <!-- Submit Button -->
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Predict your Loan Status" />
+            </div>
+        </form>
+
+        <!-- Display prediction result -->
+        <h2>The prediction result is: {{ results }}</h2>
+    </div>
+</body>
+</html>
