@@ -1,8 +1,10 @@
 # Welcome to End to End Loan Prediction Project
 
 
-## Welcome Page
-![Welcome Image](https://raw.githubusercontent.com/pooja-singh702/End-to-End-LoanPrediction/main/welcome.svg)
+
+Here is the welcome page of the Loan Prediction project:
+
+<img src="https://raw.githubusercontent.com/pooja-singh702/End-to-End-LoanPrediction/main/welcome.svg" width="100%" />
 
 
 
