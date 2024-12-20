@@ -1,7 +1,10 @@
 # Welcome to End to End Loan Prediction Project
 
+
 ## Welcome Page
-![Welcome Image](welcome.svg)
+![Welcome Image](https://github.com/your-username/End_to_End_Loan_Prediction/raw/main/welcome.svg)
+
+
 
 
 
