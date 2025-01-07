@@ -26,7 +26,11 @@ You can fill out the form here: [Loan Eligibility Form](http://127.0.0.1:5002/Pr
 
 ## Overview: 
 ```
-Developed an End-to-End loan prediction application using a simple but challenging dataset. The goal was not just to build pipeline or predict loan approvals but also to handle the intricacies of imbalanced data while focusing on reducing false positives— a critical aspect in real-world financial decision-making, where defaults should not be incorrectly classified as non-defaults integrating machine learning, data preprocessing, and a user-friendly interface focusing on improving data quality and leveraging statistical analysis like Hypothesis Testing for insights. 
+Developed an End-to-End loan prediction application using a simple but challenging dataset. The goal was not just to build pipeline or predict
+loan approvals but also to handle the intricacies of imbalanced data while focusing
+on reducing false positives— a critical aspect in real-world financial decision-making,
+where defaults should not be incorrectly classified as non-defaults integrating machine learning,
+data preprocessing, and a user-friendly interface focusing on improving data quality and leveraging statistical analysis like Hypothesis Testing for insights. 
 
 ```
 
